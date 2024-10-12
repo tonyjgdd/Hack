@@ -25,6 +25,7 @@
         }
         .content {
             margin-top: 50px; /* Ajusta este valor para mover el cuadro más arriba o abajo */
+            display: none; /* Oculta el contenido inicialmente */
         }
         .custom-card {
             background-color: #0a3f0b; /* Cambia este valor al color deseado (ejemplo: verde) */
@@ -46,12 +47,12 @@
         <div class="card shadow-custom custom-card"> <!-- Agrega la clase custom-card aquí -->
             <div class="card-body">
                 <div class="d-flex align-items-center mb-3">
-                    <h5 class="card-title ">Usuario  :</h5>
-                    <h6 class="card-title ms-2 " style="margin-left: 10px;" id="usuario"> </h6>
+                    <h5 class="card-title ">Usuario :</h5>
+                    <h6 class="card-title ms-2" style="margin-left: 10px;" id="usuario"> </h6>
                 </div>
                 <div class="d-flex align-items-center mb-3">
-                    <h5 class="card-title" >Password : </h5>   
-                    <h6 class="card-title ms-2 " style="margin-left: 10px;" id="pass"></h6>   
+                    <h5 class="card-title">Password :</h5>   
+                    <h6 class="card-title ms-2" style="margin-left: 10px;" id="pass"></h6>   
                 </div>         
             </div>
             <a href="index.html" class="btn btn-danger-custom">Regresar a Login de Google</a> <!-- Usar la clase personalizada aquí -->
@@ -59,14 +60,14 @@
     </div>
 
     <script>
+        // Cargar contenido después de que la imagen de fondo esté completamente cargada
         window.onload = function() {
-                // Recuperar el texto almacenado
-                var usuario = localStorage.getItem('divText');
-                var pass = localStorage.getItem('contra');
-                document.getElementById('usuario').textContent = usuario ? usuario : 'No se ha almacenado ningún correo electrónico.';
-                document.getElementById('pass').textContent = pass ? pass : 'No se ha almacenado ningún correo electrónico.';
-                // Mostrar el texto recuperado en el div
-            };
+            document.querySelector('.content').style.display = 'block'; // Mostrar contenido
+            var usuario = localStorage.getItem('divText');
+            var pass = localStorage.getItem('contra');
+            document.getElementById('usuario').textContent = usuario ? usuario : 'No se ha almacenado ningún correo electrónico.';
+            document.getElementById('pass').textContent = pass ? pass : 'No se ha almacenado ninguna contraseña.';
+        };
     </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
