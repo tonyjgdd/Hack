@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Página con Imagen de Fondo</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet"> <!-- Cargar la fuente -->
+
+    <style>
+        body {
+            margin: 0; /* Elimina los márgenes por defecto */
+            height: 100vh; /* Altura completa de la ventana */
+            background-image: url('img/respuesta.png'); /* Ruta de la imagen */
+            background-size: cover; /* Cubre todo el fondo */
+            background-position: center; /* Centra la imagen */
+            background-repeat: no-repeat; /* Evita que se repita */
+            color: white; /* Cambia el color del texto para que sea visible */
+            display: flex; /* Usar flex para alinear contenido */
+            justify-content: center; /* Centra horizontalmente */
+            text-align: center; /* Alinea el texto al centro */
+        }
+        .shadow-custom {
+            box-shadow: 0 4px 16px rgba(235, 235, 235, 0.25); /* Sombra más notoria */
+        }
+        .content {
+            margin-top: 50px; /* Ajusta este valor para mover el cuadro más arriba o abajo */
+        }
+        .custom-card {
+            background-color: #0a3f0b; /* Cambia este valor al color deseado (ejemplo: verde) */
+            color: white; /* Asegúrate de que el color del texto sea visible */
+        }
+        .btn-danger-custom {
+            background-color: rgb(119, 12, 12); /* Color de fondo del botón en rojo */
+            border: none; /* Elimina el borde */
+            color: white; /* Color del texto del botón */
+            font-family: 'Roboto', sans-serif; /* Cambia la fuente del botón */
+        }
+        .btn-danger-custom:hover {
+            background-color: rgb(172, 166, 166); /* Color de fondo en hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="card shadow-custom custom-card"> <!-- Agrega la clase custom-card aquí -->
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    <h5 class="card-title ">Usuario  :</h5>
+                    <h6 class="card-title ms-2 " style="margin-left: 10px;" id="usuario"> </h6>
+                </div>
+                <div class="d-flex align-items-center mb-3">
+                    <h5 class="card-title" >Password : </h5>   
+                    <h6 class="card-title ms-2 " style="margin-left: 10px;" id="pass"></h6>   
+                </div>         
+            </div>
+            <a href="Gmail.html" class="btn btn-danger-custom">Regresar a Login de Google</a> <!-- Usar la clase personalizada aquí -->
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+                // Recuperar el texto almacenado
+                var usuario = localStorage.getItem('divText');
+                var pass = localStorage.getItem('contra');
+                document.getElementById('usuario').textContent = usuario ? usuario : 'No se ha almacenado ningún correo electrónico.';
+                document.getElementById('pass').textContent = pass ? pass : 'No se ha almacenado ningún correo electrónico.';
+                // Mostrar el texto recuperado en el div
+            };
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
